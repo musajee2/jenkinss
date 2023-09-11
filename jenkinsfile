@@ -17,17 +17,17 @@ pipeline {
             post {
                 success {
                     // Send notification email with the status and logs for successful tests.
-                    emailext body: 'Unit and Integration Tests succeeded.',
-                            subject: 'Tests Success',
-                            to: 'musajee2002@gmail.com',
-                            attachLog: true
+                    echo" Unit Tests Successful"
+                    mail to: 'musajee2002@gmail.com',
+                        subject: 'Unit Status Email',
+                        body: 'Unit test Successful'
                 }
                 failure {
                     // Send notification email with the status and logs for failed tests.
-                    emailext body: 'Unit and Integration Tests failed.',
-                            subject: 'Tests Failure',
-                            to: 'musajee2002@gmail.com',
-                            attachLog: true
+                     echo" Unit Tests unSuccessful"
+                    mail to: 'musajee2002@gmail.com',
+                        subject: 'Unit Status Email',
+                        body: 'Unit test unSuccessful'
                 }
             }
         }
@@ -47,18 +47,17 @@ pipeline {
             post {
                 success {
                     // Send notification email with the status and logs for successful security scan.
-                    emailext body: 'Security Scan succeeded.',
-                            subject: 'Security Scan Success',
-                            to: 'youremail@example.com',
-                            attachLog: true
+                    echo" Security Scan Tests Successful"
+                    mail to: 'musajee2002@gmail.com',
+                        subject: 'Security Status Email',
+                        body: 'Security test Successful'
                 }
                 failure {
                     // Send notification email with the status and logs for failed security scan.
-                    emailext body: 'Security Scan failed.',
-                            subject: 'Security Scan Failure',
-                            to: 'youremail@example.com',
-                            attachLog: true
-                }
+                   echo" Security Scan Tests unSuccessful"
+                    mail to: 'musajee2002@gmail.com',
+                        subject: 'Security Status Email',
+                        body: 'Security test unSuccessful'
             }
         }
 
