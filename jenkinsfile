@@ -5,36 +5,43 @@ pipeline {
         stage('Build') {
             steps {
                 // Use a build automation tool
+                echo "Build"
             }
         }
         stage('Unit and Integration Tests') {
             steps {
-                // Use test automation tools
+                // Use test automation tool
+                echo "Tests"
             }
         }
         stage('Code Analysis') {
             steps {
                 // Integrate a code analysis tool
+                echo "Code Analysis"
             }
         }
         stage('Security Scan') {
             steps {
                 // Integrate a security scanning tool
+                echo "Security Scan"
             }
         }
         stage('Deploy to Staging') {
             steps {
                 // Deploy to your staging environment
+                echo "Deploy"
             }
         }
         stage('Integration Tests on Staging') {
             steps {
                 // Run integration tests on the staging environment
+                echo "Integration Tests"
             }
         }
         stage('Deploy to Production') {
             steps {
                 // Deploy to your production environment
+                echo "Production"
             }
         }
     }
