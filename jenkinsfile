@@ -51,13 +51,11 @@ pipeline {
             emailext subject: "Pipeline Successful",
                 body: "The Jenkins pipeline completed all stages.",
                 to: 'musajee2002@gmail.com'
-            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
         }
         failure {
             emailext subject: "Pipeline Failed",
                 body: "The Jenkins pipeline has failed",
                 to: 'musajee2002@gmail.com'
-            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
         }
     }
 }
