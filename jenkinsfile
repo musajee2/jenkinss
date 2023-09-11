@@ -14,6 +14,18 @@ pipeline {
                 echo "Tests"
             }
         }
+ post {
+        success {
+            emailext subject: "Pipeline Successful",
+                body: "The Jenkins pipeline completed all stages.",
+                to: 'musajee2002@gmail.com'
+        }
+        failure {
+            emailext subject: "Pipeline Failed",
+                body: "The Jenkins pipeline has failed",
+                to: 'musajee2002@gmail.com'
+        }
+    }
         stage('Code Analysis') {
             steps {
                 // Integrate a code analysis tool
@@ -26,6 +38,18 @@ pipeline {
                 echo "Security Scan"
             }
         }
+ post {
+        success {
+            emailext subject: "Pipeline Successful",
+                body: "The Jenkins pipeline completed all stages.",
+                to: 'musajee2002@gmail.com'
+        }
+        failure {
+            emailext subject: "Pipeline Failed",
+                body: "The Jenkins pipeline has failed",
+                to: 'musajee2002@gmail.com'
+        }
+    }
         stage('Deploy to Staging') {
             steps {
                 // Deploy to your staging environment
@@ -43,19 +67,6 @@ pipeline {
                 // Deploy to your production environment
                 echo "Production"
             }
-        }
-    }
-    
-    post {
-        success {
-            emailext subject: "Pipeline Successful",
-                body: "The Jenkins pipeline completed all stages.",
-                to: 'musajee2002@gmail.com'
-        }
-        failure {
-            emailext subject: "Pipeline Failed",
-                body: "The Jenkins pipeline has failed",
-                to: 'musajee2002@gmail.com'
         }
     }
 }
