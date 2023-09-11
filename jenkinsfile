@@ -58,6 +58,7 @@ pipeline {
                     mail to: 'musajee2002@gmail.com',
                         subject: 'Security Status Email',
                         body: 'Security test unSuccessful'
+                }
             }
         }
 
@@ -82,6 +83,5 @@ pipeline {
                 echo 'Deploying to Production'
             }
         }
-}
-}
+    }
 }
