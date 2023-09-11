@@ -26,6 +26,7 @@ pipeline {
                 to: 'musajee2002@gmail.com'
         }
     }
+}
         stage('Code Analysis') {
             steps {
                 // Integrate a code analysis tool
@@ -50,6 +51,7 @@ pipeline {
                 to: 'musajee2002@gmail.com'
         }
     }
+}
         stage('Deploy to Staging') {
             steps {
                 // Deploy to your staging environment
